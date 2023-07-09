@@ -1,0 +1,61 @@
+# Project: Proyecto2
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Curandero.o Enemigos.o Instrucciones.o Lobos.o main.o Pasillo.o Pasilloprincipal.o Personaje.o Puerta.o Bandido.o Minotauro.o Ciclope.o
+LINKOBJ  = Curandero.o Enemigos.o Instrucciones.o Lobos.o main.o Pasillo.o Pasilloprincipal.o Personaje.o Puerta.o Bandido.o Minotauro.o Ciclope.o
+LIBS     = -L"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/lib" -L"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/include" -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/include" -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/Alejandro/Tele/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = "Proyecto Final.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = D:\Alejandro\Tele\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Curandero.o: Curandero.cpp
+	$(CPP) -c Curandero.cpp -o Curandero.o $(CXXFLAGS)
+
+Enemigos.o: Enemigos.cpp
+	$(CPP) -c Enemigos.cpp -o Enemigos.o $(CXXFLAGS)
+
+Instrucciones.o: Instrucciones.cpp
+	$(CPP) -c Instrucciones.cpp -o Instrucciones.o $(CXXFLAGS)
+
+Lobos.o: Lobos.cpp
+	$(CPP) -c Lobos.cpp -o Lobos.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Pasillo.o: Pasillo.cpp
+	$(CPP) -c Pasillo.cpp -o Pasillo.o $(CXXFLAGS)
+
+Pasilloprincipal.o: Pasilloprincipal.cpp
+	$(CPP) -c Pasilloprincipal.cpp -o Pasilloprincipal.o $(CXXFLAGS)
+
+Personaje.o: Personaje.cpp
+	$(CPP) -c Personaje.cpp -o Personaje.o $(CXXFLAGS)
+
+Puerta.o: Puerta.cpp
+	$(CPP) -c Puerta.cpp -o Puerta.o $(CXXFLAGS)
+
+Bandido.o: Bandido.cpp
+	$(CPP) -c Bandido.cpp -o Bandido.o $(CXXFLAGS)
+
+Minotauro.o: Minotauro.cpp
+	$(CPP) -c Minotauro.cpp -o Minotauro.o $(CXXFLAGS)
+
+Ciclope.o: Ciclope.cpp
+	$(CPP) -c Ciclope.cpp -o Ciclope.o $(CXXFLAGS)
